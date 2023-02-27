@@ -1,5 +1,5 @@
 ## :pushpin: marguerite
->쇼핑몰 사이트 
+>쇼핑몰 웹 사이트 
 
 
 </br>
