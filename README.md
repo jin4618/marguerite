@@ -12,7 +12,9 @@
 
 ### 2.사용기술
 * JAVA11   
-* ORACLE
+* ORACLE   
+* JAVASCRIPT   
+* AJAX
 
 </br>
 
