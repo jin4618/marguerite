@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 수정</title>
+<title>marguerite</title>
 
 <style>
 	.mainDiv{
@@ -64,7 +64,7 @@
 
 	<main class="mainDiv">
 	
-		<div class="topLogo"><a href="index.jsp"><span>비밀번호변경</span></a></div>
+		<div class="topLogo"><a href="#"><span>비밀번호변경</span></a></div>
 		
      	 <form class="mainForm" action="updatePw.do">
          	<div><input type="text" name="id" placeholder="아이디를 입력하세요." required></div>

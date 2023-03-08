@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SIGN UP</title>
+<title>marguerite</title>
 <script>
 	function checkInfo() {
 		if(document.userInfo.pw.value != document.userInfo.pw2.value) {
@@ -74,7 +74,7 @@
 <body>
 	<main class="mainDiv">
 	
-		<div class="topLogo"><a href="index.jsp"><span>회원가입</span></a></div>
+		<div class="topLogo"><a href="#"><span>회원가입</span></a></div>
 	
 		<form class="mainForm" action="userJoin.do"  name="userInfo"> <!-- onsubmit="return checkInfo()" -->
 				<div><input type="text" name="id" placeholder="아이디를 입력하세요." required></div>

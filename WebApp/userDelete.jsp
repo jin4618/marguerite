@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원탈퇴</title>
+<title>marguerite</title>
 
 <style>
 
@@ -66,7 +66,7 @@
 
 	<main class="mainDiv">
 	
-		<div class="topLogo"><a href="index.jsp"><span>회원탈퇴</span></a></div>
+		<div class="topLogo"><a href="#"><span>회원탈퇴</span></a></div>
 		
 		<form class="mainForm" action="userDelete.do">
 			<div><input type="text" name="id" placeholder="아이디를 입력하세요." required></div>

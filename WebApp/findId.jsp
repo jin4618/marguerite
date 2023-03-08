@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>marguerite</title>
 
 
 <style>
@@ -68,7 +68,7 @@
 
 	<main class="mainDiv">
 	
-		<div class="topLogo"><a href="index.jsp"><span>아이디찾기</span></a></div>
+		<div class="topLogo"><a href="#"><span>아이디찾기</span></a></div>
 	
 		<form class="mainForm" action="findId.do">
 			<div><input type="text" name="name" placeholder="이름을 입력하세요." required></div>

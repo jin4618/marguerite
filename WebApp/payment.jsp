@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>marguerite</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <style>
@@ -69,7 +69,7 @@
                     } else {
                         //[3] 아직 제대로 결제가 되지 않았습니다.
                         //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-                    	location.href="index.jsp";
+                    	location.href="./";
                     }
                 });
                 //성공시 이동할 페이지
@@ -79,7 +79,7 @@
                 msg += '에러내용 : ' + rsp.error_msg;
                 //실패시 이동할 페이지
                 alert(msg);
-                location.href="index.jsp";
+                location.href="./";
             }
         });
         

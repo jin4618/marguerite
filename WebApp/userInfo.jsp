@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>marguerite</title>
 <style>
 
 	body{
@@ -150,7 +150,7 @@
 	
 	<main>
 	 		<div class="logoDiv">
-	 			<span onclick="location.href='index.jsp'">marguerite</span>
+	 			<span onclick="location.href='./'">marguerite</span>
 	 		</div>
 	 			
 	 		<div class="userInfoDiv">
@@ -191,7 +191,7 @@
 	 		<div class="logoutDiv">
 	 			<div onclick="location.href='logout.do'"><span>로그아웃</span></div>
 	 			<div><span>|</span></div>
-	 			<div onclick="location.href='index.jsp'"><span>홈으로</span></div>
+	 			<div onclick="location.href='./'"><span>홈으로</span></div>
 	 		</div>
 	 		
 	 		
