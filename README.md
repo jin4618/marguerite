@@ -46,7 +46,7 @@
 
 #### 4-1. 전체흐름
 
-<img src="img/프로젝트구조.png" width="900" height="400">
+<img src="img/프로젝트구조.png" width="700" height="350">
 </br>
 </br>
 
