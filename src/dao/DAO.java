@@ -652,20 +652,23 @@ public class DAO {
 	
 	// 배송지 관리
     public boolean insertAddr(String id, String address) {
-      
+      /*
     	String sql = "MERGE INTO shipping USING DUAL ON (id = ?) "
     			+ "WHEN MATCHED THEN "
     			+ "UPDATE SET address = ? "
     			+ "WHEN NOT MATCHED THEN "
     			+ "INSERT VALUES (?, ?)";
+     */
+    	
+    	String sql = "UPDATE shipping SET address = ? WHERE id = ?";
     	
 	      try {
 	      pstmt = con.prepareStatement(sql);
 	      
-	      pstmt.setString(1, id);
-	      pstmt.setString(2, address);
-	      pstmt.setString(3, id);
-	      pstmt.setString(4, address);
+	      pstmt.setString(1, address);
+	      pstmt.setString(2, id);
+//	      pstmt.setString(3, id);
+//	      pstmt.setString(4, address);
 	      
 	      pstmt.executeUpdate();
 	      
