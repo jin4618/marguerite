@@ -2,14 +2,11 @@
 >쇼핑몰 웹 사이트 
 
 
-</br>
-
 ### 1. 제작기간&참여 인원
 
 * 2023.02.13. ~ 2023.03.04.   
 * 팀프로젝트(3인)
 
-</br>
 
 ### 2. 사용기술
 
@@ -20,13 +17,11 @@
 * JAVASCRIPT
 * AJAX
 
-</br>
 
 ### 3. ERD
 
-<img src="img/ERD.png" width="700" height="350">
+<img src="img/ERD.png" width="700" height="300">
 
-</br>
 
 ### 4. 핵심기능
 
@@ -43,10 +38,6 @@
     -	상품을 바로 결제하거나 장바구니에 담은 상품을 결제를 할 수 있다.
     -	주문한 내역을 조회할 수 있다.
     -	비밀번호를 수정하거나 회원탈퇴를 할 수 있다.
-
-
-
-</br>
 
 <details>
 <summary>상세설명 펼치기</summary>
@@ -176,11 +167,16 @@
 
 </details>
 
+</br>
+
 ### 5. 핵심 트러블 슈팅
 
 #### 5-1. 장바구니 상품 중복 문제
-
+<details>
+<summary>문제 확인</summary>
 <img src="img/BasketDuplication.png" width="600" height="300">
+</details>
+
 
 장바구니에서 같은 상품을 담을 때 사이즈가 같아도 따로따로 들어가는 문제를 Merge 문을 활용하여 상품 이름과 상품 사이즈를 조건을 걸어 일치하면 추가한 수량만큼 수량과 가격을 UPDATE 없으면 INSERT
 
@@ -278,7 +274,6 @@ https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd
 https://github.com/jin4618/marguerite/blob/3a310673a0e6425795d04241faf891a11a91bb72/WebApp/detailCheck.jsp#L295-L308
 
 </details>
-
 
 </br>
 
