@@ -179,10 +179,15 @@
 ### 5. 핵심 트러블 슈팅
 
 #### 5-1. 장바구니 상품 중복 문제
+
+<img src="img/BasketDuplication.png" width="600" height="300">
+
 장바구니에서 같은 상품을 담을 때 사이즈가 같아도 따로따로 들어가는 문제를 Merge 문을 활용하여 상품 이름과 상품 사이즈를 조건을 걸어 일치하면 추가한 수량만큼 수량과 가격을 UPDATE 없으면 INSERT
+
 <details>
 <summary>✔️ 기존 코드</summary>
-<img src="img/.png" width="600" height="300">
+    
+    String sql = "INSERT INTO JBASKET VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 </details>
 
@@ -216,12 +221,51 @@ https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7
 수량을 올리거나 내릴 때 어떤 상품을 누르든 맨 위 상품만 수량이 변경되는 문제로   
 DB에 'JBasket' 테이블에서 수량과 가격을 UPDATE 할 수 있는 CountUp, CountDown 메소드를 만들고 View에서는 onclick 이벤트로 상품 이름과 사이즈 데이터를 함께 경로를 지정하여 누를 때마다 UPDATE 되도록 해결
 <details>
-<summary>✔️ 개선된 코드</summary>
+<summary>✔️ 기존 코드</summary>
     
-- 
+    <script>
+    function plus(){
+	
+	var count = document.getElementById("count");
+	var price = document.getElementById("price");
+	var totalPrice = document.getElementById("totalPrice");
+	
+	count.value++;
+	
+	totalPrice.value = parseInt(price.value) * parseInt(count.value);
+	
+	
+	
+    }
+
+    function minus(){
+	
+	var count = document.getElementById("count");
+	var price = document.getElementById("price");
+	var totalPrice = document.getElementById("totalPrice");
+	    if(count.value > 1){
+		    count.value--;
+		    totalPrice.value = parseInt(totalPrice.value) - parseInt(price.value);
+	    }else{
+		    count.value = 1;
+	    }
+	
+    }
+    </script>
+    
+    
+    <div>
+        <span class="minusBox" onclick="minus()">-</span>
+            <input class="count" id="count" type="text"  size="2" name="count" value="${plist.count}" max="10" />
+		<span class="plusBox" onclick="plus()">+</span>
+	</div>
 
 </details>
 
+<details>
+<summary>✔️ 개선된 코드</summary>
+https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd55d/src/dao/DAO.java#L537-L582
+https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd55d/WebApp/Basket.jsp#L300-L304
 
 </br>
 
