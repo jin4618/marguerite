@@ -225,6 +225,19 @@ DB에 'JBasket' 테이블에서 수량과 가격을 UPDATE 할 수 있는 CountU
 
 </br>
 
+#### 5-4. shoes&bag 사이즈 문제
+상품 상세 정보를 한 페이지로 이용하다보니 신발과 가방에도 사이즈가 Large, Medium, Small 사이즈로 출력되는 문제
+<details>
+<summary>✔️ 개선된 코드</summary>
+    
+- JSTL을 활용하여 카테고리가 'shoes&bag'일 때는 사이즈가 free로 출력되도록 해결
+https://github.com/jin4618/marguerite/blob/3a310673a0e6425795d04241faf891a11a91bb72/WebApp/detailCheck.jsp#L295-L308
+
+</details>
+
+
+</br>
+
 ### 6. 느낀점
 
 
