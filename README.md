@@ -5,12 +5,14 @@
 </br>
 
 ### 1. 제작기간&참여 인원
+
 * 2023.02.13. ~ 2023.03.04.   
 * 팀프로젝트(3인)
 
 </br>
 
 ### 2. 사용기술
+
 * JAVA11
 * ORACLE
 * JSP
@@ -21,11 +23,13 @@
 </br>
 
 ### 3. ERD
+
 <img src="img/ERD.png" width="700" height="350">
 
 </br>
 
 ### 4. 핵심기능
+
 >Admin  ( 회원 목록 조회, 주문 목록 조회 )
 - 회원 목록을 조회할 수 있다.
 - 주문 목록을 조회할 수 있다.
@@ -56,6 +60,7 @@
 
 
 #### 4-2. Connection ✔️ [코드확인](https://github.com/jin4618/marguerite/blob/c13529b382a5d3a154e9e84cdc4cab8ba253eb0d/src/dbconn/DBConn.java)
+
 -	JDBC를 활용한 OracleDB 연결
 
 
@@ -78,7 +83,7 @@
 </br>
 
 - Best : 매출 수량을 기반으로 10개의 상품을 뽑아 출력
-    - 수량이 같을 경우에는 가격 순으로 뽑는다. ✔️ [코드확인](https://github.com/jin4618/marguerite/blob/c13529b382a5d3a154e9e84cdc4cab8ba253eb0d/src/dao/DAO.java#L255-L277)
+    - 수량이 같을 경우에는 가격 순으로 뽑는다. ✔️ [코드확인](https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7c0a/src/dao/DAO.java#L257)
 - Outer, Top, Bottom, Shoes&Bag, Dress 구성으로 원하는 카테고리를 골라 쇼핑할 수 있다.
     
 </br>
@@ -127,35 +132,98 @@
 
 #### 4-9. 상품 상세 정보
 
+<img src="img/Detail.png" width="600" height="300">
+</br>
+
 - 원하는 상품을 눌러 가격, 배송비를 확인하고 사이즈와 수량을 선택하여 총 상품 금액을 확인할 수 있다.
 - 장바구니에 담거나 바로 구매가 가능하다.
 
     #### 상품 결제
-    - KG 이니시스 결제 API를 이용하여 원하는 결제 방법을 선택하고 결제한다.
+    
+    <img src="img/Pay.png" width="600" height="300">
+    </br>
+    
+    - KG 이니시스 결제 API를 이용하여 원하는 결제 방법을 선택하고 결제한다. ✔️ [코드확인](https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7c0a/WebApp/payment.jsp)
 
 
 </br>
 
 #### 4-10. 장바구니
+
+<img src="img/Basket.png" width="600" height="300">
+</br>
+
 - 장바구니에 담았던 상품 목록들이 이미지, 상품명, 사이즈, 수량, 구매 금액, 배송비 정보와 함께 출력되며 삭제도 가능하다.
 - 체크 박스로 결제할 상품들을 선택하여 총 상품금액, 총 배송비, 결제 예정 금액을 확인할 수 있다.
 
 
 </br>
 
-#### 4-11. 상품 검색
+#### 4-11. 상품 검색 ✔️ [코드확인](https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7c0a/src/dao/DAO.java#L206)
+
+<img src="img/Search.png" width="600" height="300">
+</br>
+
 - 원하는 상품 이름 또는 색깔을 검색하여 조회할 수 있다.
 
 
 </br>
 
 #### 4-12. 회원탈퇴
+
 - 아이디와 비밀번호를 입력
     - Controller를 거쳐 DB에 ‘signup3’ 테이블에서 회원정보와 비교하여 일치할 경우 DELETE
 
 </details>
 
-### 5. 핵심 트러블 슈팅 
+### 5. 핵심 트러블 슈팅
+
+#### 5-1. 장바구니 상품 중복 문제
+장바구니에서 같은 상품을 담을 때 사이즈가 같아도 따로따로 들어가는 문제를 Merge 문을 활용하여 상품 이름과 상품 사이즈를 조건을 걸어 일치하면 추가한 수량만큼 수량과 가격을 UPDATE 없으면 INSERT
+<details>
+<summary>✔️ 기존 코드</summary>
+<img src="img/.png" width="600" height="300">
+
+</details>
+
+<details>
+<summary>✔️ 개선된 코드</summary>
+https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7c0a/src/dao/DAO.java#L468-L472
+</details>
+
+
+</br>
+
+#### 5-2. 상품 상세정보 / 장바구니 페이지에서 한 form에서 2개의 버튼 경로 다르게하는 문제
+상세정보 페이지에서는 장바구니 담기 / 바로구매 버튼, 장바구니 페이지에서는 삭제 / 결제 버튼   
+두 페이지 모두 form은 결제 폼으로 감싸져 경로 또한 어떤 버튼을 누르든 결제 Controller 로 갔다.   
+그래서 이러한 문제를 JavaScript의 onclick 이벤트를 활용하여 해결
+
+<details>
+<summary>✔️ 개선된 코드</summary>
+
+- 이벤트구현
+https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7c0a/WebApp/detailCheck.jsp#L322-L323
+- 함수구현
+https://github.com/jin4618/marguerite/blob/c47be8396b7bed487ad6661188ac0e79c9ef7c0a/WebApp/detailCheck.jsp#L188-L204
+
+</details>
+
+
+</br>
+
+#### 5-3. 장바구니 수량 문제
+수량을 올리거나 내릴 때 어떤 상품을 누르든 맨 위 상품만 수량이 변경되는 문제로   
+DB에 'JBasket' 테이블에서 수량과 가격을 UPDATE 할 수 있는 CountUp, CountDown 메소드를 만들고 View에서는 onclick 이벤트로 상품 이름과 사이즈 데이터를 함께 경로를 지정하여 누를 때마다 UPDATE 되도록 해결
+<details>
+<summary>✔️ 개선된 코드</summary>
+    
+- 
+
+</details>
+
+
+</br>
 
 ### 6. 느낀점
 
