@@ -70,7 +70,7 @@
 
 #### 4-4. 카테고리
 
-<img src="img/Category.png" width="600" height="300">
+<img src="img/Category.png" width="600" height="50">
 </br>
 
 - Best : 매출 수량을 기반으로 10개의 상품을 뽑아 출력
