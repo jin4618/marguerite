@@ -267,6 +267,7 @@ https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd
 
 #### 5-4. shoes&bag 사이즈 문제
 상품 상세 정보를 한 페이지로 이용하다보니 신발과 가방에도 사이즈가 Large, Medium, Small 사이즈로 출력되는 문제
+
 <details>
 <summary>✔️ 개선된 코드</summary>
     
