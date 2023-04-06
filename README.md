@@ -182,7 +182,7 @@
 
 <details>
 <summary>✔️ 기존 코드</summary>
-    
+	
     String sql = "INSERT INTO JBASKET VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 </details>
