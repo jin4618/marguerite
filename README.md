@@ -263,5 +263,21 @@ DB에 'JBasket' 테이블에서 수량과 가격을 UPDATE 할 수 있는 CountU
 https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd55d/src/dao/DAO.java#L537-L582
 https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd55d/WebApp/Basket.jsp#L300-L304
 
+</br>
+
+#### 5-4. shoes&bag 사이즈 문제
+상품 상세 정보를 한 페이지로 이용하다보니 신발과 가방에도 사이즈가 Large, Medium, Small 사이즈로 출력되는 문제
+<details>
+<summary>✔️ 개선된 코드</summary>
+    
+- JSTL을 활용하여 카테고리가 'shoes&bag'일 때는 사이즈가 free로 출력되도록 해결
+https://github.com/jin4618/marguerite/blob/3a310673a0e6425795d04241faf891a11a91bb72/WebApp/detailCheck.jsp#L295-L308
+
+</details>
+
+</br>
+
+### 6. 느낀점
+Mubi 프로젝트를 하며 부족함을 많이 느껴 스터디로 토이 프로젝트를 진행하였습니다. 그 결과가 이 marguerite 프로젝트로 그 전에 해보지 않았던 비밀번호 확인, 아이디 / 비밀번호 찾기 팝업창 구현, Merge문 활용, 장바구니 담기 등등 많은 도전과 성공이 있었습니다. 또한, 팀원들과의 시너지도 좋았기에 더 재미있게 진행할 수 있었습니다. 다만, 시간이 부족하여 아직 미흡한 부분이 많습니다. 앞으로도 짬짬히 계속 수정하고 구현하고 싶은 기능을 추가하여 발전해 나갈 것입니다.
 
 
