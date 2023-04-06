@@ -257,11 +257,12 @@ DB에 'JBasket' 테이블에서 수량과 가격을 UPDATE 할 수 있는 CountU
 	</div>
 
 </details>
-
-<details>
+   
+<details>   
 <summary>✔️ 개선된 코드</summary>
 https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd55d/src/dao/DAO.java#L537-L582
 https://github.com/jin4618/marguerite/blob/5ee4eb9bca147402a821473d650e54f5b3cdd55d/WebApp/Basket.jsp#L300-L304
+</details>
 
 </br>
 
