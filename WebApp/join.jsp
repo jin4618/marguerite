@@ -76,7 +76,7 @@
 	
 		<div class="topLogo"><a href="#"><span>회원가입</span></a></div>
 	
-		<form class="mainForm" action="userJoin.do"  name="userInfo"> <!-- onsubmit="return checkInfo()" -->
+		<form class="mainForm" action="userJoin.do"  name="userInfo" onsubmit="return checkInfo()"> <!--  -->
 				<div><input type="text" name="id" placeholder="아이디를 입력하세요." required></div>
 				<div><input type="text" name="name" placeholder="이름을 입력하세요." required></div>
 				<div><input type="password" name="pw" placeholder="비밀번호를 입력하세요." required></div>
