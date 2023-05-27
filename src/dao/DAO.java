@@ -251,6 +251,30 @@ public class DAO {
 	}
 	
 	
+	// 신상품
+	public ArrayList<ProductVO> newProductInfo() throws SQLException {
+		ArrayList<ProductVO> narray = new ArrayList<ProductVO>();
+		String sql = "SELECT * FROM product3 order by TO_NUMBER(code) desc";
+		
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			String code = rs.getString("code");
+			String pname = rs.getString("pname");
+			String category = rs.getString("category");
+			String color = rs.getString("color");
+			int quantity = rs.getInt("quantity");
+			String psize = rs.getString("psize");
+			int amount = rs.getInt("amount");
+			int price = rs.getInt("price");
+			String pimage = rs.getString("pimage");
+	
+			ProductVO sv = new ProductVO(code, pname, category, color, quantity, psize, amount, price, pimage);
+			narray.add(sv);
+		}
+		
+		return narray;
+	}
 	
 	public ArrayList<ProductVO> bestProductInfo() throws SQLException{
 		ArrayList<ProductVO> siarray = new ArrayList<ProductVO>();
@@ -382,7 +406,7 @@ public class DAO {
 		return diarray;
 	}
 	
-	public ArrayList<ProductVO>shoes_BagProductInfo() throws SQLException{
+	public ArrayList<ProductVO> shoes_BagProductInfo() throws SQLException{
 		ArrayList<ProductVO> siarray = new ArrayList<ProductVO>();
 		String sql = "SELECT * FROM PRODUCT3 WHERE category = 'shoesbag'";
 		
@@ -415,7 +439,8 @@ public class DAO {
 	 
 	 String sql = "INSERT INTO orderList VALUES(?,?,?,?,?,?)";
 	 
-	 try { pstmt = con.prepareStatement(sql); 
+	 try {
+	 pstmt = con.prepareStatement(sql); 
 	 pstmt.setString(1, tvo.getId());
 	 pstmt.setString(2, tvo.getPimage()); 
 	 pstmt.setString(3, tvo.getPname());
@@ -423,27 +448,17 @@ public class DAO {
 	 pstmt.setString(5, tvo.getPsize());
 	 pstmt.setInt(6, tvo.getPrice());
 	 
-	  pstmt.executeUpdate();
+	 pstmt.executeUpdate();
 	  
-	  }catch (SQLException e) { e.printStackTrace(); return false; } return true; }
+	  }
+	 catch (SQLException e) { 
+		 e.printStackTrace();
+		 return false;
+	 }
+	 return true;
+	 }
 	 
-	
-	/*
-	 * public boolean insertOrderList(OrderListVO tvo) {
-	 * 
-	 * String sql =
-	 * "INSERT ALL INTO orderList VALUES(?,?,?,?,?,?) SELECT * FROM DUAL";
-	 * 
-	 * try { pstmt = con.prepareStatement(sql);
-	 * 
-	 * pstmt.setString(1, tvo.getId()); pstmt.setString(2, tvo.getPimage());
-	 * pstmt.setString(3, tvo.getPname()); pstmt.setInt(4, tvo.getCount());
-	 * pstmt.setString(5, tvo.getPsize()); pstmt.setInt(6, tvo.getPrice());
-	 * 
-	 * pstmt.executeUpdate();
-	 * 
-	 * }catch (SQLException e) { e.printStackTrace(); return false; } return true; }
-	 */
+
 	
 	
 	

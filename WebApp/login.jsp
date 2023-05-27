@@ -81,7 +81,7 @@
 <body>
 
 	<main class="mainDiv">
-		<div class="topLogo"><a href="./"><span>marguerite</span></a></div>
+		<div class="topLogo"><a href="index.do"><span>marguerite</span></a></div>
 		
 		<form action="login.do" class="mainForm">
 				<div><input type="text" name="id" placeholder="아이디를 입력하세요." required></div>

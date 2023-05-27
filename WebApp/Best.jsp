@@ -96,7 +96,7 @@
 <header>
 		<div class="headerArea">
 				
-			<div><a href="./"><span>marguerite</span></a></div>
+			<div><a href="index.do"><span>marguerite</span></a></div>
 			<div><a href="best.do"><span>best</span></a></div>
 			<div><a href="outer.do"><span>outer</span></a></div>
 			<div><a href="top.do"><span>top</span></a></div>

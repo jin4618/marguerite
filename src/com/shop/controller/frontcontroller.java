@@ -23,6 +23,7 @@ import com.shop.command.impl.CommandDressProduct;
 import com.shop.command.impl.CommandImpl;
 import com.shop.command.impl.CommandInsertAddr;
 import com.shop.command.impl.CommandMyOrderList;
+import com.shop.command.impl.CommandNewProduct;
 import com.shop.command.impl.CommandOuterProduct;
 import com.shop.command.impl.CommandPaySuccess;
 import com.shop.command.impl.CommandPayment;
@@ -70,11 +71,25 @@ public class frontcontroller extends HttpServlet {
 		
 		case "/index.do":
 			
+			u1 = new CommandNewProduct();
+			
+			try {
+				u1.execute(request, response);
+			} catch(Exception e1) {
+				e1.printStackTrace();
+			}
+			
+			str = "main.do";
+			
+			break;
+		
+		case "/main.do":
+			
 			u1 = new CommandBestProduct();
 			
 			try {
-			u1.execute(request, response);
-			}catch(Exception e1) {
+				u1.execute(request, response);
+			} catch(Exception e1) {
 				e1.printStackTrace();
 			}
 			

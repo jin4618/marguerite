@@ -118,7 +118,7 @@
    <header>
       <div class="headerArea">
             
-         <div><a href="#"><span>marguerite</span></a></div>
+         <div><a href="index.do"><span>marguerite</span></a></div>
          <div><a href="best.do"><span>best</span></a></div>
          <div><a href="outer.do"><span>outer</span></a></div>
          <div><a href="top.do"><span>top</span></a></div>
@@ -167,19 +167,36 @@
    <main class="mainDiv">
    
       <div><img class="mainPageImg"src="img/mainPageImg.jpg"></div>
+      
       <div><span class="newProductSpan">신상품</span></div>
       
       <div class="mainPageNewProductDiv">
       		
-         <div><img class="mainPageNewProductImg" src="img/mainPageNewProductImg.jpg"></div>
-         <div><img class="mainPageNewProductImg" src="img/mainPageNewProductImg.jpg"></div>
-         <div><img class="mainPageNewProductImg" src="img/mainPageNewProductImg.jpg"></div>
-         <div><img class="mainPageNewProductImg" src="img/mainPageNewProductImg.jpg"></div>
+         <c:forEach var="nplist" items="${nplist}" begin="0" end="3"> 
+			
+			<form action="detailCheck.do"> 
+			
+				<input type="hidden" name="code" value="${nplist.code }" />
+				<input type="hidden" name="category" value="${nplist.category }" />
+				<input type="hidden" name="pname" value="${nplist.pname }" />
+				<input type="hidden" name="psize" value="${nplist.psize }" />
+				<input type="hidden" name="pimage" value="${nplist.pimage }" />
+				<input type="hidden" name="price" value="${nplist.price }" />
+				
+				<div class="imageDiv">
+					<div><input class="img" type="image" name=submit src="${nplist.pimage}"  /></div>
+					<div><span>${nplist.pname}</span></div>
+					<div><fmt:formatNumber value="${nplist.price}" pattern="#,##0" />원</div>
+				</div>
+			</form>
+			
+		</c:forEach>
+		
       </div>
       
       <div><span class="bestProductSpan">인기상품</span></div>
 	  <div class="mainPageBestProductDiv">
-      <c:forEach var="plist" items="${plist}" begin="0" end="7"> 
+      <c:forEach var="plist" items="${plist}" begin="0" end="3"> 
 			
 			<form action="detailCheck.do"> 
 			

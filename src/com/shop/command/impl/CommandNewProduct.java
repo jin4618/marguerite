@@ -8,25 +8,24 @@ import javax.servlet.http.HttpServletResponse;
 import dao.DAO;
 import vo.ProductVO;
 
-public class CommandBottomProduct implements CommandImpl {
+public class CommandNewProduct implements CommandImpl {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
 		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
 		//DAO생성
 		
-		DAO bdao = new DAO();
 		
-		ArrayList<ProductVO> plist = null;
+		DAO ndao = new DAO();
 		
-		plist = bdao.bottomProductInfo();
-		request.setAttribute("plist", plist);
+		ArrayList<ProductVO> nplist = null;
 		
-
+		nplist = ndao.newProductInfo();
+		request.setAttribute("nplist", nplist);
+		
 	}
-
+	
 }
